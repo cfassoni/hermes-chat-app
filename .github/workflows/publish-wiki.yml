@@ -1,0 +1,55 @@
+name: Publish Wiki Documentation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'documentation/**'
+      - '.github/workflows/publish-wiki.yml'
+      - 'scripts/sync-wiki.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-wiki:
+    name: Sync Documentation to Wiki
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Clone Wiki repository
+        run: |
+          git clone "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.wiki.git" wiki-repo || {
+            echo "Wiki repository not found or not yet initialized, creating local git repository..."
+            mkdir -p wiki-repo
+            cd wiki-repo
+            git init -b master
+            git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.wiki.git"
+            cd ..
+          }
+
+      - name: Synchronize documentation to Wiki
+        run: |
+          node scripts/sync-wiki.mjs --source documentation --target wiki-repo --repo "${{ github.repository }}"
+
+      - name: Commit and push Wiki changes
+        run: |
+          cd wiki-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No documentation changes detected. Wiki is up to date."
+          else
+            git commit -m "docs: synchronize wiki documentation from main [skip ci]"
+            git push origin master
+          fi

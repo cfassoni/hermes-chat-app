@@ -17,6 +17,17 @@ tags:
 
 This file tracks all modifications, additions, and deprecations within the `documentation/` knowledge graph in compliance with Google's Open Knowledge Format (OKF) specification.
 
+### [2026-09-06] - Continuous Delivery: GitHub Wiki Automated Documentation Sync Pipeline
+- **Action:** Implemented automated continuous delivery pipeline publishing OKF documentation to GitHub Wiki upon PR merges to `main` and on manual dispatch.
+- **Artifacts:**
+  - Added [`scripts/sync-wiki.mjs`](../scripts/sync-wiki.mjs) (Node.js OKF to Wiki sync engine).
+  - Added [`.github/workflows/publish-wiki.yml`](../.github/workflows/publish-wiki.yml) (CI/CD publishing workflow).
+  - Added [`src/tests/sync-wiki.test.ts`](../src/tests/sync-wiki.test.ts) (Automated Vitest test suite).
+  - Added [`documentation/walkthroughs/wiki-sync-pipeline-walkthrough.md`](walkthroughs/wiki-sync-pipeline-walkthrough.md).
+  - Updated [`documentation/index.md`](index.md) (bumped to v0.7.0).
+  - Updated [`documentation/backlog.md`](backlog.md) (registered `INFRA-001`).
+- **Context:** Automated wiki synchronization to eliminate documentation drift, making all OKF architectural documents, specs, and walkthroughs available on the repository's native GitHub Wiki.
+
 ### [2026-09-06] - Formalization of Centralized Product Backlog & Roadmap
 - **Action:** Created centralized, atomic OKF engineering backlog and roadmap with explicit phase statuses, DoD criteria, and multi-agent persona assignments.
 - **Artifacts:**

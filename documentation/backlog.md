@@ -64,6 +64,18 @@ Each backlog item follows the collaborative lifecycle defined in [`AGENTS.md`](.
 
 ---
 
+### Continuous Delivery & Infrastructure: GitHub Wiki Documentation Sync
+* **Status:** `READY FOR MERGE` (Branch: `feat/wiki-sync-pipeline`)
+* **Lead Persona:** Architect / Coder / QA Engineer
+* **Deliverables:**
+  - [x] Native Node.js sync engine (`scripts/sync-wiki.mjs`) mapping OKF docs, generating `Home.md`, `_Sidebar.md`, `_Footer.md`, and normalizing external links to GitHub repo URLs.
+  - [x] GitHub Actions workflow (`.github/workflows/publish-wiki.yml`) publishing on push to `main` and on `workflow_dispatch`.
+  - [x] Pruning of obsolete files and empty directories in target wiki repo while preserving `.git/`.
+  - [x] Automated Vitest test suite (`src/tests/sync-wiki.test.ts`) covering dry-run, live sync, link transforms, and pruning.
+* **Verification:** Walkthrough documented in [`documentation/walkthroughs/wiki-sync-pipeline-walkthrough.md`](walkthroughs/wiki-sync-pipeline-walkthrough.md).
+
+---
+
 ### Phase 2.2: Hermes SSE Streaming Protocol & Real-time Reasoning Parser
 * **Status:** `READY FOR IMPLEMENTATION` (Next Immediate Epic)
 * **Lead Persona:** Coder / QA Engineer
@@ -128,6 +140,7 @@ Each backlog item follows the collaborative lifecycle defined in [`AGENTS.md`](.
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `FEAT-001` | Multiplatform Scaffolding Baseline | 1 | `feat/project-scaffolding` | Architect / Coder | `COMPLETED` |
 | `FEAT-002` | Local SQLite Persistence & Adapters | 2.1 | `feat/sqlite-persistence` | Coder / QA Engineer | `COMPLETED` |
+| `INFRA-001` | GitHub Wiki Documentation Sync | Infra | `feat/wiki-sync-pipeline` | Architect / Coder / QA | `READY FOR MERGE` |
 | `FEAT-003` | Hermes SSE Streaming & `<thought>` Parser | 2.2 | `feat/hermes-sse-streaming` | Coder / QA Engineer | `UP NEXT` |
 | `FEAT-004` | Split-Runtime HITL Tool Execution | 2.3 | `feat/hitl-tool-execution` | Security / Coder | `BACKLOG` |
 | `FEAT-005` | Multimodal Ingestion & Audio Pipeline | 2.4 | `feat/multimodal-audio` | Coder / QA Engineer | `BACKLOG` |
