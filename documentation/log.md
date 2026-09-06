@@ -17,6 +17,13 @@ tags:
 
 This file tracks all modifications, additions, and deprecations within the `documentation/` knowledge graph in compliance with Google's Open Knowledge Format (OKF) specification.
 
+### [2026-09-06] - Formalization of Centralized Product Backlog & Roadmap
+- **Action:** Created centralized, atomic OKF engineering backlog and roadmap with explicit phase statuses, DoD criteria, and multi-agent persona assignments.
+- **Artifacts:**
+  - Added [`documentation/backlog.md`](backlog.md).
+  - Updated [`documentation/index.md`](index.md).
+- **Context:** Established explicit, transparent tracking for upcoming project deliveries to eliminate investigative overhead and provide direct visibility over multi-agent task execution.
+
 ### [2026-09-06] - Learning Capture: Windows Runtime, Loopback & DWM Z-Order Standards
 - **Action:** Captured and formalized critical platform learnings regarding Windows 11 loopback DNS resolution, Microsoft Edge WebView2 lifecycle, and Windows DWM foreground elevation traps.
 - **Artifacts:**
