@@ -87,6 +87,10 @@ For multi-step tasks, structure the plan with explicit verification steps:
 - **CI/CD Handling (e.g., GitHub Actions):**
   - When CI/CD pipelines run, request the user to check and report the pipeline status.
   - NEVER enter active polling loops or wait loops to inspect CI/CD execution.
+- **Post-Merge, Auto-Learn & Session Wrap-Up (Always Return to `main`):**
+  - Upon completion and merging of any PR, or at the conclusion of a work session, the agent MUST always return the local repository to the `main` branch (`git checkout main`), pull the latest upstream changes (`git pull origin main`), delete the merged local feature branch (`git branch -d <branch>`), and verify that the working tree is 100% clean (`git status`).
+  - **Mandatory Autonomous `/learn` Trigger:** Immediately following return to `main` after any merged PR, the agent MUST automatically execute the `/learn` evaluation workflow: analyze recent interactions for explicit user feedback, corrections, or reusable procedures, create/update a `learning_proposal.md` artifact with structured diffs/rationales, and proactively present it for user review and approval.
+  - Never leave the repository on temporary feature branches or with unstaged/uncommitted files at session end.
 
 ---
 

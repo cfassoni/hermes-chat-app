@@ -104,3 +104,16 @@ Whenever creating, modifying, or deprecating a concept:
   - Testing verification results and evidence.
   - Concrete next steps.
 - **Index & Log Registration:** Register the walkthrough in `documentation/index.md` (under `## Project Walkthroughs`) and log the entry in `documentation/log.md`.
+
+---
+
+## 7. GitHub Wiki (Gollum Engine) Transformation Standards
+
+When publishing OKF documentation to GitHub Wiki (`.wiki.git`), the following structural transformations are mandatory to ensure rich, native Markdown rendering:
+
+1. **Root Flattening:** GitHub Wiki (Gollum) renders markdown documents inside subdirectories as raw downloadable blobs/text without Wiki theme or sidebar. All markdown files MUST be flattened directly into the target root (e.g., `documentation/specs/spec-001.md` -> `spec-001.md`, `documentation/index.md` -> `Home.md`).
+2. **YAML Frontmatter Stripping:** Gollum does not hide frontmatter; leading `---...---` blocks must be stripped during synchronization so pages immediately display their primary `# Title`.
+3. **Clean Gollum Slugs:** Internal cross-document links and `_Sidebar.md` navigation MUST use extensionless slugs without `.md` and without directory prefixes (e.g., `[Spec](spec-001-hermes-chat-core)` instead of `[Spec](specs/spec-001-hermes-chat-core.md)`). Preserving `#anchor` hashes is supported.
+4. **Asset URL Rewriting:** Relative image paths break across page views in GitHub Wiki. Images in `documentation/assets/` must be rewritten to absolute raw GitHub URLs (`https://raw.githubusercontent.com/${repo}/main/documentation/...`).
+5. **Target Pruning:** Obsolete files and empty directories in the Wiki clone must be pruned while strictly preserving `.git/` metadata.
+
