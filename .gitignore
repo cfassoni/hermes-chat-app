@@ -16,3 +16,28 @@ yarn-error.log*
 
 # External Tools Configuration
 documentation/.obsidian/
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Production Build Output
+dist/
+build/
+
+# Rust / Cargo / Tauri
+target/
+src-tauri/target/
+
+# IDE & Editor caches
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Coverage and Test Output
+coverage/
+*.lcov
