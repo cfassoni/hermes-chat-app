@@ -17,6 +17,13 @@ tags:
 
 This file tracks all modifications, additions, and deprecations within the `documentation/` knowledge graph in compliance with Google's Open Knowledge Format (OKF) specification.
 
+### [2026-09-06] - Enhancement: GitHub Wiki Flat Rendering, Frontmatter Stripping & Gollum Slugs
+- **Action:** Upgraded `scripts/sync-wiki.mjs` to optimize GitHub Wiki rendering based on user feedback.
+- **Artifacts:**
+  - Updated [`scripts/sync-wiki.mjs`](../scripts/sync-wiki.mjs): Added root flattening for all markdown documents, stripped YAML frontmatter, normalized internal links to Gollum slugs without `.md` or path prefixes, routed asset image links to raw GitHub URLs, and enabled empty directory pruning.
+  - Updated [`src/tests/sync-wiki.test.ts`](../src/tests/sync-wiki.test.ts): Extended Vitest test suite covering root flattening, frontmatter removal, Gollum slugs, and directory cleanup.
+- **Context:** GitHub Wiki (Gollum engine) renders best when pages are flat at root without path prefixes, internal links use clean page slugs without `.md`, frontmatter is stripped to prevent raw YAML rendering, and asset images point to raw GitHub URLs.
+
 ### [2026-09-06] - Continuous Delivery: GitHub Wiki Automated Documentation Sync Pipeline
 - **Action:** Implemented automated continuous delivery pipeline publishing OKF documentation to GitHub Wiki upon PR merges to `main` and on manual dispatch.
 - **Artifacts:**

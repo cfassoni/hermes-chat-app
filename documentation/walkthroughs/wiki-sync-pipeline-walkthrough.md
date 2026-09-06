@@ -77,7 +77,13 @@ In accordance with [`.agents/personas/README.md`](../../.agents/personas/README.
   - Ignores code block contents (fenced with ```` ``` ````) to avoid corrupting code snippets or regex strings.
 - **Target Pruning with `.git` Preservation**: Prunes obsolete files or empty directories from the cloned wiki repository without disturbing `.git/` tracking metadata.
 
-### 3.2 GitHub Actions Workflow (`.github/workflows/publish-wiki.yml`)
+### 3.2 GitHub Wiki (Gollum Engine) Native Rendering Optimization
+- **Root Flattening:** GitHub Wiki (Gollum) treats files located inside subdirectories as raw downloadable assets or raw text rather than rendering them in the Wiki layout. The synchronizer now flattens all markdown documents directly to the wiki root (e.g., `specs/spec-001-hermes-chat-core.md` -> `spec-001-hermes-chat-core.md`).
+- **YAML Frontmatter Stripping:** Gollum does not hide or parse OKF YAML frontmatter, displaying raw YAML text at the top of pages. The synchronizer strips leading `---...---` blocks so pages immediately begin with the primary `# Title`.
+- **Clean Gollum Slugs:** Gollum navigates pages using extensionless slugs (e.g. `[Spec](spec-001-hermes-chat-core)`). Markdown links containing `.md` or directory prefixes force raw file downloads. The synchronizer converts all internal links in documents and `_Sidebar.md` into clean slugs, preserving `#anchors`.
+- **Static Asset Raw URL Routing:** Asset links (images and media) are rewritten to absolute `raw.githubusercontent.com` URLs to ensure reliable rendering across all wiki pages without path resolution failure.
+
+### 3.3 GitHub Actions Workflow (`.github/workflows/publish-wiki.yml`)
 - **Triggers**:
   - `push` to branch `main` on changes to `documentation/**`, `.github/workflows/publish-wiki.yml`, or `scripts/sync-wiki.mjs`.
   - Manual dispatch via `workflow_dispatch`.
