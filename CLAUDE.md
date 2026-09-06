@@ -111,11 +111,13 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 - **Storage Location:** All project documentation is maintained in the `documentation/` directory at the repository root, structured with subdirectories created as needed.
 - **Google Open Knowledge Format (OKF):** Documentation must strictly conform to Google's Open Knowledge Format (OKF):
-  - **Concept-Oriented Structure:** Each document represents a discrete concept (e.g., architectural component, data model, API contract, or user feature).
+  - **Strictly Atomic Concepts ("LLM-Wiki" Pattern):** Each document MUST represent a single, discrete, atomic concept (e.g., one architectural component, one data model, one API contract, or one feature specification). Monolithic multi-domain specifications are strictly prohibited to prevent AI context window bloat and ensure fast, modular retrieval.
   - **YAML Frontmatter:** Every markdown document MUST include YAML frontmatter declaring metadata (`id`, `title`, `type`, `status`, `tags`, etc.).
   - **Central Index:** Maintain `documentation/index.md` as the unified table of contents and semantic catalog.
   - **Audit Log:** Maintain `documentation/log.md` to track document versioning and change history.
   - **Semantic Cross-Linking:** Concepts must link to related concepts using standard relative Markdown links.
+  - **Asset Colocation:** Visual mockups, diagrams, and media must be stored in designated `documentation/assets/<category>/` folders and linked directly within concept documents.
+  - **Milestone Walkthroughs:** Every architectural phase, major feature implementation, or milestone delivery MUST include an atomic walkthrough document stored under `documentation/walkthroughs/` conforming to OKF standards (summarizing goals, architectural decisions, artifacts created, verification results, and next steps), registered in `documentation/index.md`, and recorded in `documentation/log.md`.
 - **Proactive Maintenance:** The agent must ALWAYS consult the `documentation/` directory before proposing changes and keep all documentation synchronized and up to date.
 
 ---

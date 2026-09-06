@@ -2,11 +2,12 @@
 id: okf-catalog-root
 title: Hermes Chat App Knowledge Base
 type: catalog
-version: 0.1.0
+version: 0.2.0
 status: active
 last_updated: 2026-09-06
 authors:
   - Antigravity Pair Programmer
+  - Celso Fassoni
 tags:
   - okf
   - index
@@ -34,7 +35,12 @@ This knowledge graph is maintained continuously by human contributors and AI age
 
 | Specification ID | Title | Status | Concept Document |
 | :--- | :--- | :--- | :--- |
-| *Pending Discussion* | *Initial System Specification* | *Draft* | *To be drafted and approved before coding* |
+| `spec-001-hermes-chat-core` | Master Specification & Architectural RFC | `review_pending` | [SPEC-001](specs/spec-001-hermes-chat-core.md) |
+| `spec-sse-streaming-protocol` | Hermes SSE Streaming Protocol & Event Parser | `active` | [SSE Streaming Protocol](specs/sse-streaming-protocol.md) |
+| `spec-hitl-tool-execution` | Split-Runtime Human-In-The-Loop Tool Execution | `active` | [HITL Tool Execution](specs/hitl-tool-execution.md) |
+| `spec-multimodal-audio-pipeline` | Multimodal Ingestion & Bidirectional Audio | `active` | [Multimodal & Audio Pipeline](specs/multimodal-audio-pipeline.md) |
+| `spec-responsive-layout` | Responsive Layout Matrix & Design System | `active` | [Responsive Layout Matrix](specs/responsive-layout.md) |
+| `spec-notification-engine` | Cross-Platform Native Notification Engine | `active` | [Notification Engine](specs/notification-engine.md) |
 
 ---
 
@@ -42,7 +48,8 @@ This knowledge graph is maintained continuously by human contributors and AI age
 
 | Concept ID | Domain Area | Status | Document |
 | :--- | :--- | :--- | :--- |
-| *Pending Discussion* | *System Architecture & Topology* | *Draft* | *Awaiting tech stack alignment* |
+| `arch-system-topology` | System Topology & Multiplatform Architecture | `active` | [System Topology](architecture/system-topology.md) |
+| `arch-data-model` | SQLite Database Schema & Persistence Model | `active` | [Data Model](architecture/data-model.md) |
 
 ---
 
@@ -50,4 +57,17 @@ This knowledge graph is maintained continuously by human contributors and AI age
 
 | Strategy ID | Scope | Status | Document |
 | :--- | :--- | :--- | :--- |
-| *Pending Discussion* | *Test Methodology & Criteria* | *Draft* | *Awaiting tech stack alignment* |
+| `test-quality-strategy` | Quality Assurance & Testing Strategy | `active` | [Quality & Testing Strategy](testing/quality-and-testing-strategy.md) |
+
+---
+
+## 5. Design Assets & UI Concepts (`assets/mockups/`)
+
+- **[Desktop UI Concept Mockup](assets/mockups/hermes-chat-desktop-mockup.jpg)**: Visual reference for Windows desktop & wide web viewport.
+- **[Mobile UI Concept Mockup](assets/mockups/hermes-chat-mobile-mockup.jpg)**: Visual reference for Android mobile screen viewport.
+
+---
+
+## 6. Project Walkthroughs (`walkthroughs/`)
+
+- **[Initial Architecture & Specifications Walkthrough](walkthroughs/initial-architecture-and-specs.md)**: End-to-end summary of the initial architectural decisions, functional requirements, and OKF knowledge graph.
