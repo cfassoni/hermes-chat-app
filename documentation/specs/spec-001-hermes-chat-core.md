@@ -2,8 +2,8 @@
 id: spec-001-hermes-chat-core
 title: Master Specification & Architectural RFC for Hermes Chat App
 type: specification
-version: 0.2.0
-status: review_pending
+version: 1.0.0
+status: active
 created_at: 2026-09-06
 last_updated: 2026-09-06
 authors:

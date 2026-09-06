@@ -2,7 +2,7 @@
 id: okf-catalog-root
 title: Hermes Chat App Knowledge Base
 type: catalog
-version: 0.3.0
+version: 0.4.0
 status: active
 last_updated: 2026-09-06
 authors:
@@ -36,7 +36,7 @@ This knowledge graph is maintained continuously by human contributors and AI age
 
 | Specification ID | Title | Status | Concept Document |
 | :--- | :--- | :--- | :--- |
-| `spec-001-hermes-chat-core` | Master Specification & Architectural RFC | `review_pending` | [SPEC-001](specs/spec-001-hermes-chat-core.md) |
+| `spec-001-hermes-chat-core` | Master Specification & Architectural RFC | `active` | [SPEC-001](specs/spec-001-hermes-chat-core.md) |
 | `spec-sse-streaming-protocol` | Hermes SSE Streaming Protocol & Event Parser | `active` | [SSE Streaming Protocol](specs/sse-streaming-protocol.md) |
 | `spec-hitl-tool-execution` | Split-Runtime Human-In-The-Loop Tool Execution | `active` | [HITL Tool Execution](specs/hitl-tool-execution.md) |
 | `spec-multimodal-audio-pipeline` | Multimodal Ingestion & Bidirectional Audio | `active` | [Multimodal & Audio Pipeline](specs/multimodal-audio-pipeline.md) |
@@ -74,3 +74,4 @@ This knowledge graph is maintained continuously by human contributors and AI age
 
 - **[Initial Architecture & Specifications Walkthrough](walkthroughs/initial-architecture-and-specs.md)**: End-to-end summary of the initial architectural decisions, functional requirements, and OKF knowledge graph.
 - **[Multi-Agent Personas Architecture Walkthrough](walkthroughs/multi-agent-personas-walkthrough.md)**: Design, formalization, and operational mapping of the AI Dev Team personas across Antigravity, Claude Code, and OpenCode.
+- **[Phase 1 Scaffolding & Multiplatform Baseline Walkthrough](walkthroughs/phase-1-scaffolding-walkthrough.md)**: Multiplatform baseline setup with Tauri v2, React 19, TypeScript, Tailwind CSS, Vitest, and Cargo test runners.

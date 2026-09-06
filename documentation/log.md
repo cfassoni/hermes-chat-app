@@ -17,6 +17,15 @@ tags:
 
 This file tracks all modifications, additions, and deprecations within the `documentation/` knowledge graph in compliance with Google's Open Knowledge Format (OKF) specification.
 
+### [2026-09-06] - Phase 1 Scaffolding & Multiplatform Baseline
+- **Action:** Activated master specification SPEC-001 and delivered complete multiplatform scaffolding with Tauri v2 (Rust), React 19, TypeScript, Tailwind CSS, Vitest, and Cargo.
+- **Artifacts:**
+  - Updated [`documentation/specs/spec-001-hermes-chat-core.md`](specs/spec-001-hermes-chat-core.md) (`status: active`, v1.0.0).
+  - Added [`documentation/walkthroughs/phase-1-scaffolding-walkthrough.md`](walkthroughs/phase-1-scaffolding-walkthrough.md).
+  - Updated [`documentation/index.md`](index.md) (bumped to v0.4.0).
+  - Scaffolded native host and frontend baseline: `src-tauri/`, `src/`, `package.json`, `vite.config.ts`, `tsconfig.json`, `index.html`.
+- **Context:** Approved implementation plan for Phase 1 baseline on isolated branch `feat/project-scaffolding`. All Vitest and Cargo test suites passed with 100% green status.
+
 ### [2026-09-06] - Multi-Agent Personas Architecture & Specifications
 - **Action:** Established the AI Dev Team multi-agent personas framework with atomic specifications, architectural concept, and governance synchronization across Antigravity, Claude Code, and OpenCode.
 - **Artifacts:**
