@@ -13,3 +13,6 @@ desktop.ini
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# External Tools Configuration
+documentation/.obsidian/
