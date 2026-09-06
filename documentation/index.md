@@ -2,8 +2,9 @@
 id: okf-catalog-root
 title: Hermes Chat App Knowledge Base
 type: catalog
-version: 0.4.0
+version: 0.6.0
 status: active
+
 last_updated: 2026-09-06
 authors:
   - Antigravity Pair Programmer
@@ -42,6 +43,7 @@ This knowledge graph is maintained continuously by human contributors and AI age
 | `spec-multimodal-audio-pipeline` | Multimodal Ingestion & Bidirectional Audio | `active` | [Multimodal & Audio Pipeline](specs/multimodal-audio-pipeline.md) |
 | `spec-responsive-layout` | Responsive Layout Matrix & Design System | `active` | [Responsive Layout Matrix](specs/responsive-layout.md) |
 | `spec-notification-engine` | Cross-Platform Native Notification Engine | `active` | [Notification Engine](specs/notification-engine.md) |
+| `spec-windows-desktop-environment` | Windows Desktop Environment & Runtime Integration | `active` | [Windows Desktop Environment](specs/windows-desktop-environment.md) |
 
 ---
 
@@ -75,3 +77,5 @@ This knowledge graph is maintained continuously by human contributors and AI age
 - **[Initial Architecture & Specifications Walkthrough](walkthroughs/initial-architecture-and-specs.md)**: End-to-end summary of the initial architectural decisions, functional requirements, and OKF knowledge graph.
 - **[Multi-Agent Personas Architecture Walkthrough](walkthroughs/multi-agent-personas-walkthrough.md)**: Design, formalization, and operational mapping of the AI Dev Team personas across Antigravity, Claude Code, and OpenCode.
 - **[Phase 1 Scaffolding & Multiplatform Baseline Walkthrough](walkthroughs/phase-1-scaffolding-walkthrough.md)**: Multiplatform baseline setup with Tauri v2, React 19, TypeScript, Tailwind CSS, Vitest, and Cargo test runners.
+- **[Phase 2.1 SQLite Persistence & Storage Layer Walkthrough](walkthroughs/phase-2-sqlite-persistence-walkthrough.md)**: Local SQLite storage layer via bundled rusqlite in Tauri v2, DDL migrations, IPC commands, and polymorphic WebStorageAdapter.
+
