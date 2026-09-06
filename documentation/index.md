@@ -28,6 +28,7 @@ This knowledge graph is maintained continuously by human contributors and AI age
 ## 1. Project Governance & Standards
 
 - **[Project Guidelines (AGENTS.md)](../AGENTS.md)**: Core Karpathy principles, American English mandate, Git standards, and Spec-Driven rules.
+- **[Product Backlog & Engineering Roadmap](backlog.md)**: Centralized deliverable tracking, phase statuses, and persona assignments.
 - **[AI Dev Team Personas (.agents/personas/README.md)](../.agents/personas/README.md)**: Specifications for specialized subagents (Architect, Coder, QA, Security, Reviewer).
 - **[Audit & Change Log](log.md)**: Chronological history of knowledge base modifications.
 

@@ -93,6 +93,10 @@ For multi-step tasks, structure the plan with explicit verification steps:
 ## 6. Agile & Spec-Driven Design (Mandatory Planning Gate)
 
 - **No Spec, No Code:** Nothing shall be coded until a technical and development specification has been thoroughly discussed, presented, and explicitly approved by the user.
+- **Centralized Living Backlog (`documentation/backlog.md`):**
+  - All phases, epics, deliverables, and definition of done (DoD) criteria MUST be tracked in `documentation/backlog.md`.
+  - The agent MUST ALWAYS consult `documentation/backlog.md` before proposing or discussing next steps, eliminating investigative guesswork.
+  - Upon completion and merging of each phase, the agent MUST immediately update `documentation/backlog.md` status (`COMPLETED`, `IN PROGRESS`, `READY`).
 - **Prerequisites for Implementation:** Every specification MUST define:
   1. Detailed architectural & technical implementation plan.
   2. Testing methodology (autonomous, automated unit/integration tests, or manual test protocols).
@@ -126,8 +130,17 @@ For multi-step tasks, structure the plan with explicit verification steps:
 ## 9. Multi-Agent Personas & Subagent Delegation
 
 - **Atomic Persona Catalog:** The project defines discrete developer personas under `.agents/personas/` (`architect.md`, `coder.md`, `qa-engineer.md`, `security-gatekeeper.md`, `reviewer.md`).
+- **Mandatory Subagent Delegation (No Monolithic Execution):**
+  - The Coordinator agent MUST NOT execute end-to-end feature implementations monolithically in the primary chat thread.
+  - Every non-trivial phase or feature delivery MUST be explicitly delegated to specialized subagents (`invoke_subagent`) corresponding to the persona catalog:
+    1. **Architect:** Formalizes technical specs, contracts, and implementation plans.
+    2. **Coder:** Implements surgical, minimal code in isolated feature branches.
+    3. **QA Engineer:** Implements automated unit/integration tests and mocks (Vitest, Cargo).
+    4. **Security Gatekeeper:** Audits sandboxing, HITL policies, and security guardrails.
+    5. **Reviewer:** Conducts pre-PR code review, diff audit, and SemVer checks.
+  - The Coordinator reports subagent dispatch, progress, and results transparently to the user.
 - **Autonomous & Explicit Delegation:**
-  - In Antigravity, the coordinator agent may autonomously invoke specialized subagents (`invoke_subagent`) or define new instances (`define_subagent`) configured with the corresponding persona's role, system prompt, model tier, and tool permissions.
+  - In Antigravity, the coordinator agent invokes specialized subagents (`invoke_subagent`) configured with the corresponding persona's role, system prompt, model tier, and tool permissions.
   - Subagents communicate through asynchronous messages (`send_message`) and shared atomic OKF documents under `documentation/`.
   - Subagents performing speculative or risky modifications must use isolated workspace branching (`Workspace: branch`).
 - **Single Source of Truth:** Changes must follow the collaboration lifecycle: Architecture/RFC -> Test Strategy -> Surgical Code -> Verification Proof -> Security/Release Gate.
