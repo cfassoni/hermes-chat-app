@@ -2,7 +2,7 @@
 id: okf-catalog-root
 title: Hermes Chat App Knowledge Base
 type: catalog
-version: 0.6.0
+version: 0.7.0
 status: active
 
 last_updated: 2026-09-06
@@ -79,4 +79,6 @@ This knowledge graph is maintained continuously by human contributors and AI age
 - **[Multi-Agent Personas Architecture Walkthrough](walkthroughs/multi-agent-personas-walkthrough.md)**: Design, formalization, and operational mapping of the AI Dev Team personas across Antigravity, Claude Code, and OpenCode.
 - **[Phase 1 Scaffolding & Multiplatform Baseline Walkthrough](walkthroughs/phase-1-scaffolding-walkthrough.md)**: Multiplatform baseline setup with Tauri v2, React 19, TypeScript, Tailwind CSS, Vitest, and Cargo test runners.
 - **[Phase 2.1 SQLite Persistence & Storage Layer Walkthrough](walkthroughs/phase-2-sqlite-persistence-walkthrough.md)**: Local SQLite storage layer via bundled rusqlite in Tauri v2, DDL migrations, IPC commands, and polymorphic WebStorageAdapter.
+- **[GitHub Wiki Documentation Sync Pipeline Walkthrough](walkthroughs/wiki-sync-pipeline-walkthrough.md)**: Automated publication and continuous delivery pipeline syncing OKF documentation to GitHub Wiki upon PR merges.
+
 
