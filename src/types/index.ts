@@ -10,9 +10,13 @@ export interface Workspace {
   name: string;
   icon?: string;
   color?: string;
+  customSystemPrompt?: string;
+  scopedCwd?: string;
+  defaultProfileId?: string;
   createdAt: number;
   updatedAt: number;
 }
+
 
 export interface Session {
   id: string;

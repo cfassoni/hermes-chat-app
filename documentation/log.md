@@ -17,7 +17,28 @@ tags:
 
 This file tracks all modifications, additions, and deprecations within the `documentation/` knowledge graph in compliance with Google's Open Knowledge Format (OKF) specification.
 
+### [2026-09-06] - Learning Capture: Windows Runtime, Loopback & DWM Z-Order Standards
+- **Action:** Captured and formalized critical platform learnings regarding Windows 11 loopback DNS resolution, Microsoft Edge WebView2 lifecycle, and Windows DWM foreground elevation traps.
+- **Artifacts:**
+  - Added [`.agents/skills/tauri-windows-troubleshooting/SKILL.md`](../.agents/skills/tauri-windows-troubleshooting/SKILL.md).
+  - Added [`documentation/specs/windows-desktop-environment.md`](specs/windows-desktop-environment.md).
+  - Updated [`documentation/index.md`](index.md) (bumped to v0.6.0).
+  - Cleaned and stabilized [`src-tauri/src/lib.rs`](../src-tauri/src/lib.rs) and [`src-tauri/tauri.conf.json`](../src-tauri/tauri.conf.json).
+- **Context:** Resolved debug window startup behavior where `set_always_on_top` cycling caused immediate DWM window demotion to background, and IPv6 resolution caused loopback delays. Standardized IPv4 binding (`127.0.0.1:1420`) and non-invasive window presentation.
+
+### [2026-09-06] - Phase 2.1 SQLite Persistence & Storage Layer
+- **Action:** Implemented local-first SQLite persistence layer via bundled `rusqlite` in Tauri v2, automated DDL schema migrations, IPC commands, and polymorphic `StorageAdapter` pattern.
+- **Artifacts:**
+  - Added [`documentation/walkthroughs/phase-2-sqlite-persistence-walkthrough.md`](walkthroughs/phase-2-sqlite-persistence-walkthrough.md).
+  - Updated [`documentation/index.md`](index.md) (bumped to v0.5.0).
+  - Implemented native backend database module: `src-tauri/src/db/` (`mod.rs`, `models.rs`, `schema.rs`).
+  - Implemented Tauri IPC commands: `src-tauri/src/commands/db.rs`.
+  - Implemented frontend storage layer: `src/services/storage/` (`types.ts`, `TauriStorageAdapter.ts`, `WebStorageAdapter.ts`, `index.ts`).
+  - Hydrated React 19 UI with storage adapter: `src/App.tsx`.
+- **Context:** Approved implementation plan on branch `feat/sqlite-persistence`. All Vitest unit tests and Rust Cargo test suites passed with 100% green status.
+
 ### [2026-09-06] - Phase 1 Scaffolding & Multiplatform Baseline
+
 - **Action:** Activated master specification SPEC-001 and delivered complete multiplatform scaffolding with Tauri v2 (Rust), React 19, TypeScript, Tailwind CSS, Vitest, and Cargo.
 - **Artifacts:**
   - Updated [`documentation/specs/spec-001-hermes-chat-core.md`](specs/spec-001-hermes-chat-core.md) (`status: active`, v1.0.0).
