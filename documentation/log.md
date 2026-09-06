@@ -17,6 +17,29 @@ tags:
 
 This file tracks all modifications, additions, and deprecations within the `documentation/` knowledge graph in compliance with Google's Open Knowledge Format (OKF) specification.
 
+### [2026-09-06] - Multi-Agent Personas Architecture & Specifications
+- **Action:** Established the AI Dev Team multi-agent personas framework with atomic specifications, architectural concept, and governance synchronization across Antigravity, Claude Code, and OpenCode.
+- **Artifacts:**
+  - Added [`.agents/personas/architect.md`](../.agents/personas/architect.md).
+  - Added [`.agents/personas/coder.md`](../.agents/personas/coder.md).
+  - Added [`.agents/personas/qa-engineer.md`](../.agents/personas/qa-engineer.md).
+  - Added [`.agents/personas/security-gatekeeper.md`](../.agents/personas/security-gatekeeper.md).
+  - Added [`.agents/personas/reviewer.md`](../.agents/personas/reviewer.md).
+  - Added [`.agents/personas/README.md`](../.agents/personas/README.md).
+  - Added [`documentation/architecture/multi-agent-personas.md`](architecture/multi-agent-personas.md).
+  - Added [`documentation/walkthroughs/multi-agent-personas-walkthrough.md`](walkthroughs/multi-agent-personas-walkthrough.md).
+  - Updated [`documentation/index.md`](index.md) (bumped to v0.3.0).
+  - Updated [`AGENTS.md`](../AGENTS.md) (added Section 9).
+  - Updated [`CLAUDE.md`](../CLAUDE.md) (added Section 9).
+- **Context:** Approved implementation plan to provide vendor-neutral, interoperable developer personas operating on a Hub-and-Spoke model with state sharing through the Google OKF knowledge graph.
+
+### [2026-09-06] - Governance Clarification: Project Language vs Chat Language
+- **Action:** Refined the Core Rule for project language to distinguish written project artifacts from agent-user chat communication.
+- **Artifacts:**
+  - Updated [`AGENTS.md`](../AGENTS.md) (Core Rule).
+  - Updated [`CLAUDE.md`](../CLAUDE.md) (Core Rule).
+- **Context:** User instruction to clarify that while all written artifacts (code, specs, commits, tests) must remain in American English, the chat interaction between user and agent adheres to the language initiated in the chat session.
+
 ### [2026-09-06] - Milestone Walkthroughs Rule & Protocol Mandate
 - **Action:** Formally encoded the proactive milestone walkthrough mandate in project rules and the `google-okf` specialized skill.
 - **Artifacts:**

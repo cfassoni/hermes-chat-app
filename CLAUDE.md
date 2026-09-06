@@ -6,10 +6,10 @@ Behavioral guidelines to reduce common LLM coding mistakes, derived from Andrej 
 
 ---
 
-## Core Rule: Project Language (American English)
+## Core Rule: Project Language & Communication
 
-- **Mandatory Language:** All project content—including source code, comments, docstrings, variable/type naming, documentation, commit messages, PR descriptions, test cases, and configuration files—MUST be written in **American English (en-US)**.
-- **Input Independence:** This requirement holds true regardless of the language used in prompts, user interactions, or external reference materials.
+- **Written Project Content (Mandatory American English):** All project content *written* into the codebase—including source code, comments, docstrings, variable/type naming, documentation, commit messages, PR descriptions, test cases, and configuration files—MUST be written in **American English (en-US)**.
+- **Agent-User Interaction (Chat Language):** For conversational interactions between the AI agent and the user in the chat, the agent MUST communicate in the language initiated by the user for that session (e.g., Brazilian Portuguese if the user addresses the agent in Portuguese). This ensures natural, seamless collaboration while keeping all written repository artifacts strictly in American English.
 
 ---
 
@@ -126,6 +126,14 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 - **Dynamic Creation:** Specialized skills can be created opportunistically (under `.agents/skills/<skill-name>/SKILL.md`) whenever complex, repeatable procedures, domain runbooks, or specialized workflows arise.
 - **Agent Invocation:** The agent shall proactively invoke relevant specialized skills when executing tasks matching their scope.
+
+---
+
+## 9. Multi-Agent Personas & Subagent Delegation
+
+- **Atomic Persona Catalog:** The project defines discrete developer personas under `.agents/personas/` (`architect.md`, `coder.md`, `qa-engineer.md`, `security-gatekeeper.md`, `reviewer.md`).
+- **Persona Context Switching:** When executing tasks specific to system design, automated testing, surgical coding, or security auditing, adopt the operational boundaries and system prompts defined in the corresponding `.agents/personas/<role>.md` document.
+- **Single Source of Truth:** Always reference atomic documentation in `documentation/specs/` and `documentation/testing/` to avoid polluting context windows.
 
 ---
 

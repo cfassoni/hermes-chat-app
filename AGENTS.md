@@ -6,10 +6,10 @@ Behavioral and engineering guidelines derived from Andrej Karpathy's observation
 
 ---
 
-## Core Rule: Project Language (American English)
+## Core Rule: Project Language & Communication
 
-- **Mandatory Language:** All content in this project—including source code, comments, docstrings, variable/type naming, documentation, commit messages, PR descriptions, test cases, and configuration files—MUST be written in **American English (en-US)**.
-- **Input Independence:** This requirement holds true regardless of the language used in prompts, user interactions, or external reference materials.
+- **Written Project Content (Mandatory American English):** All content *written* into the project—including source code, comments, docstrings, variable/type naming, documentation, commit messages, PR descriptions, test cases, and configuration files—MUST be written in **American English (en-US)**.
+- **Agent-User Interaction (Chat Language):** For conversational interactions between the AI agent and the user in the chat, the agent MUST communicate in the language initiated by the user for that session (e.g., Brazilian Portuguese if the user addresses the agent in Portuguese). This ensures natural, seamless collaboration while keeping all written repository artifacts strictly in American English.
 
 ---
 
@@ -120,6 +120,17 @@ For multi-step tasks, structure the plan with explicit verification steps:
 
 - **Dynamic Creation:** Specialized skills can be created opportunistically (under `.agents/skills/<skill-name>/SKILL.md`) whenever complex, repeatable procedures, domain runbooks, or specialized workflows arise.
 - **Agent Invocation:** The agent shall proactively invoke relevant specialized skills when executing tasks matching their scope.
+
+---
+
+## 9. Multi-Agent Personas & Subagent Delegation
+
+- **Atomic Persona Catalog:** The project defines discrete developer personas under `.agents/personas/` (`architect.md`, `coder.md`, `qa-engineer.md`, `security-gatekeeper.md`, `reviewer.md`).
+- **Autonomous & Explicit Delegation:**
+  - In Antigravity, the coordinator agent may autonomously invoke specialized subagents (`invoke_subagent`) or define new instances (`define_subagent`) configured with the corresponding persona's role, system prompt, model tier, and tool permissions.
+  - Subagents communicate through asynchronous messages (`send_message`) and shared atomic OKF documents under `documentation/`.
+  - Subagents performing speculative or risky modifications must use isolated workspace branching (`Workspace: branch`).
+- **Single Source of Truth:** Changes must follow the collaboration lifecycle: Architecture/RFC -> Test Strategy -> Surgical Code -> Verification Proof -> Security/Release Gate.
 
 ---
 

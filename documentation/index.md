@@ -2,7 +2,7 @@
 id: okf-catalog-root
 title: Hermes Chat App Knowledge Base
 type: catalog
-version: 0.2.0
+version: 0.3.0
 status: active
 last_updated: 2026-09-06
 authors:
@@ -27,6 +27,7 @@ This knowledge graph is maintained continuously by human contributors and AI age
 ## 1. Project Governance & Standards
 
 - **[Project Guidelines (AGENTS.md)](../AGENTS.md)**: Core Karpathy principles, American English mandate, Git standards, and Spec-Driven rules.
+- **[AI Dev Team Personas (.agents/personas/README.md)](../.agents/personas/README.md)**: Specifications for specialized subagents (Architect, Coder, QA, Security, Reviewer).
 - **[Audit & Change Log](log.md)**: Chronological history of knowledge base modifications.
 
 ---
@@ -50,6 +51,7 @@ This knowledge graph is maintained continuously by human contributors and AI age
 | :--- | :--- | :--- | :--- |
 | `arch-system-topology` | System Topology & Multiplatform Architecture | `active` | [System Topology](architecture/system-topology.md) |
 | `arch-data-model` | SQLite Database Schema & Persistence Model | `active` | [Data Model](architecture/data-model.md) |
+| `arch-multi-agent-personas` | Multi-Agent Personas & Collaboration Topology | `active` | [Multi-Agent Personas](architecture/multi-agent-personas.md) |
 
 ---
 
@@ -71,3 +73,4 @@ This knowledge graph is maintained continuously by human contributors and AI age
 ## 6. Project Walkthroughs (`walkthroughs/`)
 
 - **[Initial Architecture & Specifications Walkthrough](walkthroughs/initial-architecture-and-specs.md)**: End-to-end summary of the initial architectural decisions, functional requirements, and OKF knowledge graph.
+- **[Multi-Agent Personas Architecture Walkthrough](walkthroughs/multi-agent-personas-walkthrough.md)**: Design, formalization, and operational mapping of the AI Dev Team personas across Antigravity, Claude Code, and OpenCode.
